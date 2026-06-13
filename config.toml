@@ -1,0 +1,10 @@
+[theme]
+# This forces Streamlit to use Light Mode as the foundation, ignoring OS settings
+base="light"
+
+# Your Pastel Palette
+primaryColor="#E2FCEF"
+backgroundColor="#0B2027"
+secondaryBackgroundColor="#909580"
+textColor="#F1DEDE"
+font="sans serif"
