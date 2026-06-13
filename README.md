@@ -11,6 +11,12 @@ I built this project to see if I could take a massive, messy dataset of raw reta
 
 Using the UCI Online Retail dataset (over 500,000 rows of transactional data), I built a machine learning pipeline that automatically groups customers based on their buying behavior. I then wrapped the results in a clean, interactive Streamlit web app so non-technical folks can explore the data and see the business strategies for each group.
 
+## 🛠️ The Tech Stack (Built With)
+* **Python:** The backbone of the entire pipeline.
+* **Pandas & NumPy:** Used to wrestle the 541,000+ raw rows into clean, aggregated RFM profiles.
+* **Scikit-Learn:** The brains behind the operation. I used `StandardScaler` to normalize the data, `PCA` to compress it into 2D, and `KMeans` to build the actual clusters.
+* **Streamlit:** To turn my machine learning model into a live, interactive web app without having to write a million lines of HTML and CSS.
+
 ## How I built it (The Pipeline)
 
 Dealing with half a million rows of raw data isn't pretty. Here is exactly how I got from raw CSV to a live web app:
@@ -43,10 +49,10 @@ The model naturally divided the customers into these four strategic buckets:
 
 To make the web app run lightning-fast on the free cloud tier, I separated the heavy machine learning logic from the app UI. 
 
-* `Untitled.ipynb`: This is where all the heavy lifting, data cleaning, and scikit-learn model training happens.
+* `Untitled.ipynb`: The "kitchen." This is where all the heavy lifting, data cleaning, and scikit-learn model training happens.
 * `Online Retail.csv`: The original raw dataset (541k rows).
-* `app.py`: The interactive Streamlit dashboard code using Plotly for the visualizations.
-* `requirements.txt`: list of Python libraries needed to run the app online.
+* `app.py`: The "showroom." The interactive Streamlit dashboard code using Plotly for the visualizations.
+* `requirements.txt`: The grocery list of Python libraries needed to run the app online.
 * `.streamlit/`: Contains the `config.toml` file to give the app a custom, warm pastel UI theme instead of the default Streamlit look.
-* `pca_data.csv` & `inertia_data.csv`: Lightweight data exports from the Jupyter notebook so the web app doesn't have to recalculate the ML math every time someone clicks the link.
+someone clicks the link.
 
